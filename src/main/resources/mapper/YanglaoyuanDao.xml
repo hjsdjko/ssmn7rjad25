@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YanglaoyuanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YanglaoyuanEntity" id="yanglaoyuanMap">
+        <result property="yanglaoyuanmingcheng" column="yanglaoyuanmingcheng"/>
+        <result property="guimo" column="guimo"/>
+        <result property="tupian" column="tupian"/>
+        <result property="zhufangjieshao" column="zhufangjieshao"/>
+        <result property="sheshijieshao" column="sheshijieshao"/>
+        <result property="yajin" column="yajin"/>
+        <result property="chuangweishuliang" column="chuangweishuliang"/>
+        <result property="ruyuanliucheng" column="ruyuanliucheng"/>
+        <result property="shoufeibiaozhun" column="shoufeibiaozhun"/>
+        <result property="xiangxidizhi" column="xiangxidizhi"/>
+        <result property="zixundianhua" column="zixundianhua"/>
+        <result property="yanglaoyuanjianjie" column="yanglaoyuanjianjie"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="discussnum" column="discussnum"/>
+        <result property="storeupnum" column="storeupnum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YanglaoyuanVO" >
+		SELECT * FROM yanglaoyuan  yanglaoyuan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YanglaoyuanVO" >
+		SELECT  yanglaoyuan.* FROM yanglaoyuan  yanglaoyuan
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YanglaoyuanView" >
+
+		SELECT  yanglaoyuan.* FROM yanglaoyuan  yanglaoyuan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YanglaoyuanView" >
+		SELECT * FROM yanglaoyuan  yanglaoyuan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+	
+</mapper>
